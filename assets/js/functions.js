@@ -1,9 +1,6 @@
-// @codekit-prepend "/vendor/hammer-2.0.8.js";
-
 $( document ).ready(function() {
 
-  // DOMMouseScroll included for firefox support
-  var canScroll = true,
+var canScroll = true,
       scrollController = null;
   $(this).on('mousewheel DOMMouseScroll', function(e){
 
@@ -63,7 +60,6 @@ $( document ).ready(function() {
 
   });
 
-  // swipe support for touch devices
   var targetElement = document.getElementById('viewport'),
       mc = new Hammer(targetElement);
   mc.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
@@ -81,8 +77,6 @@ $( document ).ready(function() {
     }
 
   });
-
-  // determine scroll, swipe, and arrow key direction
   function updateHelper(param) {
 
     var curActive = $('.side-nav').find('.is-active'),
@@ -116,7 +110,6 @@ $( document ).ready(function() {
 
   }
 
-  // sync side and outer navigations
   function updateNavs(nextPos) {
 
     $('.side-nav, .outer-nav').children().removeClass('is-active');
